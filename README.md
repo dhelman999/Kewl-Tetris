@@ -43,6 +43,10 @@ https://git-lfs.com/
 ArtifactDB and some *.dylib files were too large and required the following:
 
 git lfs track ArtifactDB
+
 git add .gitattributes
+
 git lfs migrate import --include="*.dylib"
+
 git lfs migrate import --include="ArtifactDB"
+
