@@ -1,0 +1,11 @@
+<linker>
+	<assembly fullname="Assembly-CSharp" ignoreIfMissing="1">
+		<type fullname="GameController">
+			<method name="toggleShadow"/>
+		</type>
+		<type fullname="PauseMenu">
+			<method name="continueClicked"/>
+			<method name="exitClicked"/>
+		</type>
+	</assembly>
+</linker>
