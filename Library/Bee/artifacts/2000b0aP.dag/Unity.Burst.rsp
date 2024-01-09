@@ -272,7 +272,7 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.WebGLModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.WindModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/WebGLSupport/Managed/UnityEngine.XRModule.dll"
--r:"C:/Users/dhelm/Kewl Tetris/Library/PackageCache/com.unity.burst@1.8.11/Unity.Burst.Unsafe.dll"
+-r:"C:/Projects/git/Kewl-Tetris/Library/PackageCache/com.unity.burst@1.8.11/Unity.Burst.Unsafe.dll"
 -r:"Library/Bee/artifacts/2000b0aP.dag/UnityEngine.UI.ref.dll"
 "Library/PackageCache/com.unity.burst@1.8.11/Runtime/BurstCompileAttribute.cs"
 "Library/PackageCache/com.unity.burst@1.8.11/Runtime/BurstCompiler.cs"

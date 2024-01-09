@@ -49,7 +49,7 @@ public class EffectsController : MonoBehaviour
     private float mInstructionsTimeRemaining;
     private bool mInstructionsProcessed = false;
 
-    private string UI_OVERLAY_TEXT_GAME_OVER = "Game Over!\r\n\r\nPress R to restart";
+    private string UI_OVERLAY_TEXT_GAME_OVER = "Game Over!\r\n\r\nPress 'R' to restart";
     private bool mGameOverProcessed = false;
     private float mGameOverTimeTimeRemaining;
 

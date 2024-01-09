@@ -19,7 +19,7 @@ public class Tetrino : MonoBehaviour
 
     private static string DESTROYING_BLOCK_PATH = "Sprites/DestroyingBlock";
     private static GameObject mDestryoingBlock;
-
+    private static float destroyingBlockAnimationLength = 2f;
 
     private static float HIGH_BOUNDS = 9999;
     private static float LOW_BOUNDS = -9999;
@@ -193,7 +193,7 @@ public class Tetrino : MonoBehaviour
 
         foreach (GameObject currentSegment in mSegments)
         {
-            Vector3 segmentWorldPos = getLeftMostPoint(currentSegment);
+            Vector3 segmentWorldPos = getBoundsForBlock(currentSegment, Vector3.left);
 
             if (segmentWorldPos.x < lowestX)
             {
@@ -215,78 +215,6 @@ public class Tetrino : MonoBehaviour
         return targetBlock;
     }
 
-    private Vector3 getLeftMostXBounds(RectTransform rectTransform)
-    {
-        Vector3[] worldCorners = new Vector3[4];
-        rectTransform.GetWorldCorners(worldCorners);
-        Vector3 leftMostPoint = new Vector3(HIGH_BOUNDS, 0, -1);
-
-        foreach (Vector3 currentPoint in worldCorners)
-        {
-            Vector3 worldPoint = getGameBoardModel().getPlayArea().InverseTransformPoint(currentPoint);
-
-            if (worldPoint.x < leftMostPoint.x)
-            {
-                leftMostPoint = worldPoint;
-            }
-        }
-
-        return leftMostPoint;
-    }
-
-    private Vector3 getRightMostXBounds(RectTransform rectTransform)
-    {
-        Vector3[] worldCorners = new Vector3[4];
-        rectTransform.GetWorldCorners(worldCorners);
-        Vector3 rightMostPoint = new Vector3(LOW_BOUNDS, 0, -1);
-
-        foreach (Vector3 currentPoint in worldCorners)
-        {
-            Vector3 worldPoint = getGameBoardModel().getPlayArea().InverseTransformPoint(currentPoint);
-
-            if (worldPoint.x > rightMostPoint.x)
-            {
-                rightMostPoint = worldPoint;
-            }
-        }
-
-        return rightMostPoint;
-    }
-
-    public Vector3 getLeftMostPoint(GameObject targetBlock)
-    {
-        if (targetBlock == null)
-        {
-            return new Vector3(HIGH_BOUNDS, 0, 0);
-        }
-
-        RectTransform transform = targetBlock.GetComponent<RectTransform>();
-
-        return getLeftMostXBounds(transform);
-    }
-
-    public Vector3 getLeftMostPoint()
-    {
-        return getLeftMostPoint(getBottomLeftBlock());
-    }
-
-    public Vector3 getRightMostPoint(GameObject targetBlock)
-    {
-        if (targetBlock == null)
-        {
-            return new Vector3(LOW_BOUNDS, 0, 0);
-        }
-
-        RectTransform rectTransform = targetBlock.GetComponent<RectTransform>();
-
-        return getRightMostXBounds(rectTransform);
-    }
-
-    public Vector3 getRightMostPoint()
-    {
-        return getRightMostPoint(getBottomRightBlock());
-    }
-
     public GameObject getBottomRightBlock()
     {
         float highestX = LOW_BOUNDS;
@@ -295,7 +223,7 @@ public class Tetrino : MonoBehaviour
 
         foreach (GameObject currentSegment in mSegments)
         {
-            Vector3 segmentWorldPos = getRightMostPoint(currentSegment);
+            Vector3 segmentWorldPos = getBoundsForBlock(currentSegment, Vector3.right);
 
             if (segmentWorldPos.x > highestX)
             {
@@ -317,59 +245,6 @@ public class Tetrino : MonoBehaviour
         return targetBlock;
     }
 
-    public Vector3 getBottomMostPoint(GameObject targetBlock)
-    {
-        if (targetBlock == null)
-        {
-            return new Vector3(LOW_BOUNDS, 0, 0);
-        }
-
-        RectTransform rectTransform = targetBlock.GetComponent<RectTransform>();
-
-        return getBottomMostBounds(rectTransform);
-    }
-
-    public Vector3 getBottomMostPoint()
-    {
-        return getBottomMostPoint(getBottomMostBlock());
-    }
-
-    public Vector3 getTopMostPoint(GameObject targetBlock)
-    {
-        if (targetBlock == null)
-        {
-            return new Vector3(HIGH_BOUNDS, 0, 0);
-        }
-
-        RectTransform rectTransform = targetBlock.GetComponent<RectTransform>();
-
-        return getTopMostBounds(rectTransform);
-    }
-
-    public Vector3 getTopMostPoint()
-    {
-        return getTopMostPoint(getTopMostBlock());
-    }
-
-    private Vector3 getTopMostBounds(RectTransform segmentRectTransform)
-    {
-        Vector3[] worldCorners = new Vector3[4];
-        segmentRectTransform.GetWorldCorners(worldCorners);
-        Vector3 topMostPoint = new Vector3(0, LOW_BOUNDS, -1);
-
-        foreach (Vector3 currentPoint in worldCorners)
-        {
-            Vector3 worldPoint = getGameBoardModel().getPlayArea().InverseTransformPoint(currentPoint);
-
-            if (worldPoint.y > topMostPoint.y)
-            {
-                topMostPoint = worldPoint;
-            }
-        }
-
-        return topMostPoint;
-    }
-
     public GameObject getTopMostBlock()
     {
         float highestY = LOW_BOUNDS;
@@ -377,7 +252,7 @@ public class Tetrino : MonoBehaviour
 
         foreach (GameObject currentSegment in mSegments)
         {
-            Vector3 segmentWorldPos = getTopMostPoint(currentSegment);
+            Vector3 segmentWorldPos = getBoundsForBlock(currentSegment, Vector3.up);
 
             if (segmentWorldPos.y > highestY)
             {
@@ -389,25 +264,6 @@ public class Tetrino : MonoBehaviour
         return targetBlock;
     }
 
-    private Vector3 getBottomMostBounds(RectTransform segmentRectTransform)
-    {
-        Vector3[] worldCorners = new Vector3[4];
-        segmentRectTransform.GetWorldCorners(worldCorners);
-        Vector3 bottomMostPoint = new Vector3(0, HIGH_BOUNDS, -1);
-
-        foreach (Vector3 currentPoint in worldCorners)
-        {
-            Vector3 worldPoint = getGameBoardModel().getPlayArea().InverseTransformPoint(currentPoint);
-
-            if (worldPoint.y < bottomMostPoint.y)
-            {
-                bottomMostPoint = worldPoint;
-            }
-        }
-
-        return bottomMostPoint;
-    }
-
     public GameObject getBottomMostBlock()
     {
         float lowestY = HIGH_BOUNDS;
@@ -415,7 +271,7 @@ public class Tetrino : MonoBehaviour
 
         foreach (GameObject currentSegment in mSegments)
         {
-            Vector3 segmentWorldPos = getBottomMostPoint(currentSegment);
+            Vector3 segmentWorldPos = getBoundsForBlock(currentSegment, Vector3.down);
 
             if (segmentWorldPos.y < lowestY)
             {
@@ -425,6 +281,101 @@ public class Tetrino : MonoBehaviour
         }
 
         return targetBlock;
+    }
+
+    public Vector3 getPointFromVector(Vector3 vector)
+    {
+        if (vector.Equals(Vector3.left))
+        {
+            return getBoundsForBlock(getBottomLeftBlock(), Vector3.left);
+        }
+        else if (vector.Equals(Vector3.right))
+        {
+            return getBoundsForBlock(getBottomRightBlock(), Vector3.right);
+        }
+        else if (vector.Equals(Vector3.up))
+        {
+            return getBoundsForBlock(getTopMostBlock(), Vector3.up);
+        }
+        else if (vector.Equals(Vector3.down))
+        {
+            return getBoundsForBlock(getBottomMostBlock(), Vector3.down);
+        }
+
+        return Vector3.zero;
+    }
+
+    public Vector3 getBoundsForBlock(GameObject block, Vector3 vector)
+    {
+        if (block == null)
+        {
+            if (vector.Equals(Vector3.left) || vector.Equals(Vector3.right))
+            {
+                return new Vector3(HIGH_BOUNDS, 0, 0);
+            }
+            else if (vector.Equals(Vector3.left) || vector.Equals(Vector3.right))
+            {
+                return new Vector3(LOW_BOUNDS, 0, 0);
+            }
+        }
+
+        Vector3[] worldCorners = new Vector3[4];
+        RectTransform rectTransform = block.GetComponent<RectTransform>();
+        rectTransform.GetWorldCorners(worldCorners);
+        Vector3 boundedPoint = Vector3.zero;
+
+        if (vector.Equals(Vector3.left))
+        {
+            new Vector3(HIGH_BOUNDS, 0, -1);
+        }
+        else if (vector.Equals(Vector3.right))
+        {
+            new Vector3(LOW_BOUNDS, 0, -1);
+        }
+        else if (vector.Equals(Vector3.up))
+        {
+            new Vector3(0, LOW_BOUNDS, -1);
+        }
+        else if (vector.Equals(Vector3.down))
+        {
+            new Vector3(0, HIGH_BOUNDS, -1);
+        }
+
+        foreach (Vector3 currentPoint in worldCorners)
+        {
+            Vector3 worldPoint = getGameBoardModel().getPlayArea().InverseTransformPoint(currentPoint);
+
+            if (vector.Equals(Vector3.left))
+            {
+                if (worldPoint.x < boundedPoint.x)
+                {
+                    boundedPoint = worldPoint;
+                }
+            }
+            else if (vector.Equals(Vector3.right))
+            {
+                if (worldPoint.x > boundedPoint.x)
+                {
+                    boundedPoint = worldPoint;
+                }
+            }
+            else if (vector.Equals(Vector3.up))
+            {
+                if (worldPoint.y > boundedPoint.y)
+                {
+                    boundedPoint = worldPoint;
+                }
+            }
+            else if (vector.Equals(Vector3.down))
+            {
+                if (worldPoint.y < boundedPoint.y)
+                {
+                    boundedPoint = worldPoint;
+                }
+            }
+        }
+
+        return boundedPoint;
     }
 
     public List<GameObject> getSegments()
@@ -506,11 +457,6 @@ public class Tetrino : MonoBehaviour
         this.mIsShadowClone = isShadowClone;
     }
 
-    public void setShadow()
-    {
-
-    }
-
     public static bool getIsShadowEnabled()
     {
         return mIsShadowEnabled;
@@ -557,7 +503,6 @@ public class Tetrino : MonoBehaviour
             Color currentShadowColor = shadowSpriteRenderer.color;
             currentShadowColor.a = 0f;
 
-
             if (mIsShadowEnabled)
             {
                 if (toggleShadow)
@@ -590,33 +535,39 @@ public class Tetrino : MonoBehaviour
         }
     }
 
+    // Helper function to change a single base block to the block that has a destroy animation.
     public static BaseBlock changeBaseBlockToDestroyingBlock(GameObject baseSegment)
     {
+        // Get the position of the original and its parent
         Vector3 exitingSegmentLocalPos = baseSegment.GetComponent<RectTransform>().localPosition;
         Vector3 existingSegmentLocalScale = baseSegment.GetComponent<RectTransform>().localScale;
         RectTransform parentTransform = baseSegment.gameObject.transform.parent.transform.GetComponent<RectTransform>();
 
+        // We don't need the original anymore, destroy it
         Destroy(baseSegment);
 
+        // Make a new destroying block and add a base block to it because only base blocks can enter the model
         GameObject destroyingBlock = Instantiate(mDestryoingBlock, new Vector3(0, 0, -1), Quaternion.identity);
         RectTransform destroyingBlockRectTransform = destroyingBlock.AddComponent<RectTransform>();
         destroyingBlock.AddComponent<BaseBlock>();
         BaseBlock baseBlock = destroyingBlock.GetComponent<BaseBlock>();
         baseBlock.setDestroyingBlock(destroyingBlock);
 
+        // Set its parent and location to that of the original
         destroyingBlockRectTransform.SetParent(parentTransform, true);
         destroyingBlockRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Left, 0f, parentTransform.rect.width);
         destroyingBlockRectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Bottom, 0f, parentTransform.rect.height);
         destroyingBlock.transform.localPosition = exitingSegmentLocalPos;
         destroyingBlock.transform.localScale = existingSegmentLocalScale;
 
+        // Change the animator speed as I don't see a great way to do this with the importer from Aesprite
         Animator destroyingBlockAnimator = destroyingBlock.GetComponent<Animator>();
-        destroyingBlockAnimator.speed = 2f;
+        destroyingBlockAnimator.speed = destroyingBlockAnimationLength;
 
         return baseBlock;
     }
 
-
+    // Change the entire Tetrino to a destroying blocks
     public void changeTetrinoToDestroyingBlocks()
     {
         if (mSegments == null || mSegments.Count == 0)
@@ -644,15 +595,13 @@ public class Tetrino : MonoBehaviour
 
             mSegments[i] = destroyingBlock;
         }
-
     }
 
-    // *** Implement in children ***
-    public virtual bool insertIntoModel(Vector3 initialPosition)
-    {
-        return false;
-    }
+    // *** Virtual methods, implement in children ***
+    // Each child needs to know how to enter the model based on its composition
+    public virtual bool insertIntoModel(Vector3 initialPosition) { return false; }
 
+    // Each child needs to know how to rotate its blocks and adjust its position accordingly
     public virtual void rotateTetrinoUp() { }
 
     public virtual void populateSegments() { }
@@ -665,6 +614,7 @@ public class Tetrino : MonoBehaviour
 
     public virtual void adjustSegments0() { }
 
+    // Each child also needs to know how to position itself in the next tetrino area with a fixed position
     public virtual void adjustForNextTetrinoPosition() { }
 
     public virtual void adjustForStatsTetrinoPosition() { }
