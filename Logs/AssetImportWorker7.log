@@ -1,0 +1,271 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.33f1 (ee5a2aa03ab2) revision 15620650'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'en' Physical Memory: 65207 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.33f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker7
+-projectPath
+C:/Projects/git/Kewl-Tetris
+-logFile
+Logs/AssetImportWorker7.log
+-srvPort
+58019
+Successfully changed project path to: C:/Projects/git/Kewl-Tetris
+C:/Projects/git/Kewl-Tetris
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [32196] Host "[IP] 192.168.50.152 [Port] 0 [Flags] 2 [Guid] 677184651 [EditorId] 677184651 [Version] 1048832 [Id] WindowsEditor(7,DavidAlienware) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [32196] Host "[IP] 192.168.50.152 [Port] 0 [Flags] 2 [Guid] 677184651 [EditorId] 677184651 [Version] 1048832 [Id] WindowsEditor(7,DavidAlienware) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 361.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.33f1 (ee5a2aa03ab2)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Projects/git/Kewl-Tetris/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3080 Ti Laptop GPU (ID=0x2460)
+    Vendor:   NVIDIA
+    VRAM:     16189 MB
+    Driver:   31.0.15.4629
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56500
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.33f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.447757 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 70.92 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 12.419 seconds
+Domain Reload Profiling:
+	ReloadAssembly (12420ms)
+		BeginReloadAssembly (9581ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1685ms)
+			LoadAssemblies (9588ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1334ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (289ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (8ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (71ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (141ms)
+				ProcessInitializeOnLoadMethodAttributes (68ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 3.312847 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 68.59 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in 12.519 seconds
+Domain Reload Profiling:
+	ReloadAssembly (12519ms)
+		BeginReloadAssembly (98ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (16ms)
+		EndReloadAssembly (12246ms)
+			LoadAssemblies (10060ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1133ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (987ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (5ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (69ms)
+				BeforeProcessingInitializeOnLoad (84ms)
+				ProcessInitializeOnLoadAttributes (791ms)
+				ProcessInitializeOnLoadMethodAttributes (33ms)
+				AfterProcessingInitializeOnLoad (5ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.08 seconds
+Refreshing native plugins compatible for Editor in 0.67 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4029 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 48 unused Assets / (168.0 KB). Loaded Objects now: 4499.
+Memory consumption went from 180.9 MB to 180.8 MB.
+Total: 2.945200 ms (FindLiveObjects: 0.289000 ms CreateObjectMapping: 0.132500 ms MarkObjects: 2.443500 ms  DeleteObjects: 0.079300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 158837.414811 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Break_v1b.wav
+  artifactKey: Guid(3532cdd0d03ef40a9960ec71c769f220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Break_v1b.wav using Guid(3532cdd0d03ef40a9960ec71c769f220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b5404b67f44edbe02a1347648c71418') in 0.146494 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1b.wav
+  artifactKey: Guid(e112b3993e3e04e55b7b119f97e3ff37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1b.wav using Guid(e112b3993e3e04e55b7b119f97e3ff37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f23da2c8cea4706a539407893048b8a') in 0.031812 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1f.wav
+  artifactKey: Guid(a073e98bbb0ab4accad92296df54d326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1f.wav using Guid(a073e98bbb0ab4accad92296df54d326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '713958419254355c263fe2dfd7a181ac') in 0.026638 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1h.wav
+  artifactKey: Guid(c2179003c9bf249fc9ba94acb5454f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1h.wav using Guid(c2179003c9bf249fc9ba94acb5454f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8cf541550be17cd3845c932896162f8') in 0.023723 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Idle_Loop_v1.wav
+  artifactKey: Guid(e96a84f66ed7d4eaabbfb352f63add7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Idle_Loop_v1.wav using Guid(e96a84f66ed7d4eaabbfb352f63add7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db6d112832b5e433829da1591f392ab9') in 0.029033 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1g.wav
+  artifactKey: Guid(7b6ef5b1aaae446a7b047581ac37aee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1g.wav using Guid(7b6ef5b1aaae446a7b047581ac37aee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c785d057de0e7f368edb0cae4e530972') in 0.024594 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Charge_v1.wav
+  artifactKey: Guid(846c5ca1cc77f4e3d963261b770e1e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Charge_v1.wav using Guid(846c5ca1cc77f4e3d963261b770e1e69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfc8cf28eeaf2268ebb3bf5750c1917c') in 0.024263 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1g.wav
+  artifactKey: Guid(784741d96d76a4dfb8f264f7ae1a6c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1g.wav using Guid(784741d96d76a4dfb8f264f7ae1a6c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6387541bd04b752ac9016b24deb98c5c') in 0.023312 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1e.wav
+  artifactKey: Guid(d2b8c2b24093947c9a9f9946c16ffcb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Heavy_v1e.wav using Guid(d2b8c2b24093947c9a9f9946c16ffcb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df3502255dd9b40e6d8d4a444737a7fe') in 0.039404 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1c.wav
+  artifactKey: Guid(2179b55f8434e4730a6a50b24a747491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1c.wav using Guid(2179b55f8434e4730a6a50b24a747491) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7960a62cb2db2bd16588193df21da08') in 0.041495 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1f.wav
+  artifactKey: Guid(5f44800f6108d41faa3261a709b27f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1f.wav using Guid(5f44800f6108d41faa3261a709b27f87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfb9486205c7d928f8da06ca1cc5eab5') in 0.020547 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1a.wav
+  artifactKey: Guid(1e6d76858bad34edb9eb15b988002366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/AlpineAudio/Sci-Fi/ForceField/AA_SciFi_ForceField_Impact_Light_v1a.wav using Guid(1e6d76858bad34edb9eb15b988002366) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89b65a1a9e3c9e77604554600ee4e841') in 0.023533 seconds 
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

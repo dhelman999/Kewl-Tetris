@@ -42,10 +42,10 @@ public class GameBoard : MonoBehaviour
     private void Start()
     {
         // Calculate bounds
-        mLeftMostBounds = Mathf.Round(getLeftMostBounds());
-        mRightMostBounds = Mathf.Round(getRightMostBounds());
-        mBottomMostBounds = Mathf.Round(getBottomMostBounds());
-        mTopMostBounds = Mathf.Round(getTopMostBounds());
+        mLeftMostBounds = Mathf.Round(getPlayAreaBounds(Vector3.left));
+        mRightMostBounds = Mathf.Round(getPlayAreaBounds(Vector3.right));
+        mBottomMostBounds = Mathf.Round(getPlayAreaBounds(Vector3.down));
+        mTopMostBounds = Mathf.Round(getPlayAreaBounds(Vector3.up));
     }
 
     public Tetrino spawnRandomTetrino()
@@ -54,7 +54,6 @@ public class GameBoard : MonoBehaviour
 
         return spawnTetrino(TetrinoType.INVALID, randomTetrino);
     }
-
 
     public Tetrino spawnTetrino(TetrinoType type, Tetrino newTetrino)
     {
@@ -67,7 +66,7 @@ public class GameBoard : MonoBehaviour
         bool insert = newTetrino.insertIntoModel(desiredMovement);
 
         // We can check if the model insert succeeded or not, a reason why it could fail is if there was already blocks
-        // at that location, in this case, the game should end
+        // at that location, in this case, the game should end.
         if (insert)
         {
             newTetrino.GetComponent<RectTransform>().localPosition += desiredMovement;
@@ -81,6 +80,7 @@ public class GameBoard : MonoBehaviour
         return newTetrino;
     }
 
+    // Create a new shadow and drop it to the floor.
     public void updateShadow(Tetrino tetrino)
     {
         if (tetrino == null)
@@ -88,6 +88,7 @@ public class GameBoard : MonoBehaviour
             return;
         }
 
+        // Destroy the old shadow first if it exists
         if (tetrino.getShadow())
         {
             tetrino.getShadow().destroy();
@@ -129,6 +130,8 @@ public class GameBoard : MonoBehaviour
 
     }
 
+    // Essentially this is a 'test and set' type of function. It checks some sanity bounds to ensure the tetrino wants to move in the play
+    // area and then attempts the move. If successful.
     public bool moveTetrino(Tetrino tetrino, Vector3 vector)
     {
         if (tetrino == null)
@@ -147,31 +150,17 @@ public class GameBoard : MonoBehaviour
 
         bool moveSuccessful = false;
 
-        // Check play area bounds based on requested direction, request the move accordingly
-        if (vector.Equals(Vector3.left))
+        // Check play area bounds based on requested direction, request the move accordingly.
+        if (vector.Equals(Vector3.left) || vector.Equals(Vector3.down))
         {
             if ((int)desiredPoint >= targetBounds)
             {
                 moveSuccessful = requestMove(tetrino, vector);
             }
         }
-        else if (vector.Equals(Vector3.right))
+        else if (vector.Equals(Vector3.right) || vector.Equals(Vector3.up))
         {
             if ((int)desiredPoint <= targetBounds)
-            {
-                moveSuccessful = requestMove(tetrino, vector);
-            }
-        }
-        else if (vector.Equals(Vector3.up))
-        {
-            if ((int)desiredPoint <= targetBounds)
-            {
-                moveSuccessful = requestMove(tetrino, vector);
-            }
-        }
-        else if (vector.Equals(Vector3.down))
-        {
-            if ((int)desiredPoint >= targetBounds)
             {
                 moveSuccessful = requestMove(tetrino, vector);
             }
@@ -181,6 +170,7 @@ public class GameBoard : MonoBehaviour
             Debug.Log("Movemment not allowed for vector: " + vector.ToString());
         }
 
+        // The move was successful, we are free to update its position.
         if (moveSuccessful)
         {
             tetrino.transform.localPosition = desiredPosition;
@@ -189,34 +179,12 @@ public class GameBoard : MonoBehaviour
         return moveSuccessful;
     }
 
-    public bool requestMove(Tetrino tetrino, Vector3 vector)
+    // Performs either a test move, or the actual move
+    public bool performMove(Tetrino tetrino, Vector3 vector, bool isTestMove)
     {
-        if (!vector.Equals(Vector3.left) &&
-           !vector.Equals(Vector3.right) &&
-           !vector.Equals(Vector3.down) &&
-           !vector.Equals(Vector3.up))
-        {
-            return false;
-        }
-
         bool requestGranted = true;
 
-        // First remove the segments from the model so they don't collide with themselves.
-        removeTetrinoFromModel(tetrino);
-        List<GameObject> segments = tetrino.getSegments();
-
-        if (tetrino.isEmpty())
-        {
-            // This can happen in dev mode, but it better not outside of it.
-            if (!mGameController.getDevMode())
-            {
-                Debug.Log("Empty Tetrino requested move, probably a memory leak here.");
-            }
-
-            return false;
-        }
-
-        foreach (GameObject segment in segments)
+        foreach (GameObject segment in tetrino.getSegments())
         {
             if (segment == null)
             {
@@ -249,62 +217,24 @@ public class GameBoard : MonoBehaviour
                 existingBlock = getModel(baseBlock.getX(), baseBlock.getY() + 1);
             }
 
-            // See if there are any existing pieces in the model that would cause a collision.
-            if (existingBlock != null)
+            if (isTestMove)
             {
-                if (!checkForParentBlock(tetrino, existingBlock))
+                // See if there are any existing pieces in the model that would cause a collision.
+                if (existingBlock != null)
                 {
-                    requestGranted = false;
-                    break;
-                }
-            }
-        }
-
-        // The path is clear, we can do the move.
-        if (requestGranted)
-        {
-            // Perform the actual model move.
-            foreach (GameObject segment in segments)
-            {
-                if (segment == null)
-                {
-                    continue;
-                }
-
-                BaseBlock baseBlock = segment.GetComponent<BaseBlock>();
-                if (baseBlock == null)
-                {
-                    continue;
-                }
-
-                BaseBlock existingBlock = null;
-
-                if (vector.Equals(Vector3.left))
-                {
-                    existingBlock = getModel(baseBlock.getX() - 1, baseBlock.getY());
-                }
-                else if (vector.Equals(Vector3.right))
-                {
-                    existingBlock = getModel(baseBlock.getX() + 1, baseBlock.getY());
-                }
-                else if (vector.Equals(Vector3.down))
-                {
-                    existingBlock = getModel(baseBlock.getX(), baseBlock.getY() - 1);
-                }
-                else if (vector.Equals(Vector3.up))
-                {
-                    existingBlock = getModel(baseBlock.getX(), baseBlock.getY() + 1);
-                }
-
-                if (requestGranted)
-                {
-                    if (!checkForParentBlock(tetrino, existingBlock))
+                    // We can't collide with ourselves, and more specifically, shadow blocks can't collide
+                    // with their parents.
+                    if (!checkIfBlockBelongsToParent(tetrino, existingBlock))
                     {
-                        requestGranted = (existingBlock == null);
+                        requestGranted = false;
+                        break;
                     }
                 }
-
-                // Shadow clones don't enter the model
+            }
+            else
+            {
+                // This is not a test move, just perform it.
+                // However, shadow clones don't enter the model
                 if (!tetrino.getIsShadowClone())
                 {
                     setModel(segment, baseBlock.getX() + (int)vector.x, baseBlock.getY() + (int)vector.y);
@@ -317,9 +247,43 @@ public class GameBoard : MonoBehaviour
                 }
             }
         }
+
+        return requestGranted;
+    }
+
+    // This is a 'test-and-set' type of function where we first try out the move to see if there are any collisions and then
+    // perform the actual move if everything is good.
+    public bool requestMove(Tetrino tetrino, Vector3 vector)
+    {
+        bool requestGranted = true;
+
+        // First remove the segments from the model so they don't collide with themselves.
+        removeTetrinoFromModel(tetrino);
+
+        if (tetrino.isEmpty())
+        {
+            // This can happen in dev mode, but it better not outside of it.
+            if (!mGameController.getDevMode())
+            {
+                Debug.Log("Empty Tetrino requested move, probably a memory leak here.");
+            }
+
+            return false;
+        }
+
+        // For a move to be successful, each segment must do a few things:
+        // 1. Make sure it isn't colliding with itself, that's one of the reasons we removed 
+        //    the tetrino from the model earlier
+        // 2. Make sure it doesn't collidate with anything else
+        // 3. Has to update its model positing while taking into account shadow tetrinos
+        if (requestGranted = performMove(tetrino, vector, true))
+        {
+            requestGranted = performMove(tetrino, vector, false);
+        }
         else
         {
-            // If the move failed, we need to remember to add the Tetrino back to the model.
+            // If the move failed, we need to remember to add the Tetrino back to the model, but shadows don't
+            // enter the model, so don't add them back.
             if (!tetrino.getIsShadowClone())
             {
                 addTetrinoToModel(tetrino);
@@ -361,72 +325,64 @@ public class GameBoard : MonoBehaviour
 
         if (desiredDirection.Equals(Vector3.left))
         {
-            targetPoint = tetrino.getLeftMostPoint().x - BaseBlock.BLOCK_SIZE;
+            targetPoint = tetrino.getPointFromVector(desiredDirection).x - BaseBlock.BLOCK_SIZE;
         }
         else if (desiredDirection.Equals(Vector3.right))
         {
-            targetPoint = tetrino.getRightMostPoint().x + BaseBlock.BLOCK_SIZE;
+            targetPoint = tetrino.getPointFromVector(desiredDirection).x + BaseBlock.BLOCK_SIZE;
         }
         else if (desiredDirection.Equals(Vector3.down))
         {
-            targetPoint = tetrino.getBottomMostPoint().y - BaseBlock.BLOCK_SIZE;
+            targetPoint = tetrino.getPointFromVector(desiredDirection).y - BaseBlock.BLOCK_SIZE;
         }
         else if (desiredDirection.Equals(Vector3.up))
         {
-            targetPoint = tetrino.getTopMostPoint().y + BaseBlock.BLOCK_SIZE;
+            targetPoint = tetrino.getPointFromVector(desiredDirection).y + BaseBlock.BLOCK_SIZE;
         }
 
         return targetPoint;
     }
 
-    public float getLeftMostBounds()
+    private float getPlayAreaBounds(Vector3 vector)
     {
         Vector3[] worldCorners = new Vector3[4];
         mPlayArea.GetWorldCorners(worldCorners);
-        float leftMostX = mPlayArea.transform.InverseTransformPoint(worldCorners[0]).x;
 
-        return leftMostX;
+        float bounds = -1f;
+
+        if (vector.Equals(Vector3.left))
+        {
+            bounds = mPlayArea.transform.InverseTransformPoint(worldCorners[0]).x;
+        }
+        else if (vector.Equals(Vector3.right))
+        {
+            bounds = mPlayArea.transform.InverseTransformPoint(worldCorners[3]).x;
+        }
+        else if (vector.Equals(Vector3.up))
+        {
+            bounds = mPlayArea.transform.InverseTransformPoint(worldCorners[1]).y;
+        }
+        else if (vector.Equals(Vector3.down))
+        {
+            bounds = mPlayArea.transform.InverseTransformPoint(worldCorners[0]).y;
+        }
+
+        return bounds;
     }
 
-    public float getRightMostBounds()
+    private bool isWithinPlayAreaBounds(Tetrino tetrino, Vector3 vector)
     {
-        Vector3[] worldCorners = new Vector3[4];
-        mPlayArea.GetWorldCorners(worldCorners);
-        float rightMostX = mPlayArea.transform.InverseTransformPoint(worldCorners[3]).x;
+        bool isWithinBounds = false;
+        float targetPoint = tetrino.getPointFromVector(vector).x;
 
-        return rightMostX;
-    }
-
-    public float getBottomMostBounds()
-    {
-        Vector3[] worldCorners = new Vector3[4];
-        mPlayArea.GetWorldCorners(worldCorners);
-        float bottomMostY = mPlayArea.transform.InverseTransformPoint(worldCorners[0]).y;
-
-        return bottomMostY;
-    }
-
-    public float getTopMostBounds()
-    {
-        Vector3[] worldCorners = new Vector3[4];
-        mPlayArea.GetWorldCorners(worldCorners);
-        float bottomMostY = mPlayArea.transform.InverseTransformPoint(worldCorners[1]).y;
-
-        return bottomMostY;
-    }
-
-    public bool isWithinRightBounds(Tetrino tetrino)
-    {
-        float tetrinoRightMostPoint = tetrino.getRightMostPoint().x;
-        bool isWithinBounds = (int)tetrinoRightMostPoint <= (int)mRightMostBounds;
-
-        return isWithinBounds;
-    }
-
-    public bool isWithinLeftBounds(Tetrino tetrino)
-    {
-        float tetrinoLeftMostPoint = tetrino.getLeftMostPoint().x;
-        bool isWithinBounds = (int)tetrinoLeftMostPoint >= (int)mLeftMostBounds;
+        if (vector.Equals(Vector3.left))
+        {
+            isWithinBounds = (int)targetPoint >= (int)mLeftMostBounds;
+        }
+        else if (vector.Equals(Vector3.right))
+        {
+            isWithinBounds = (int)targetPoint <= (int)mRightMostBounds;
+        }
 
         return isWithinBounds;
     }
@@ -460,22 +416,15 @@ public class GameBoard : MonoBehaviour
             baseBlock.setY(y);
         }
 
-        bool validCoordinates = true;
-
-        // Validate the coordinates in the model.
-        if (!validCellCoordinates(x, y))
-        {
-            validCoordinates = false;
-        }
-
         // Only set the model with valid coordinates, note that from above, the position may be invalid for the actual
         // base blocks as they could rotate outside the game play area.
-        if (validCoordinates)
+        if (validCellCoordinates(x, y))
         {
             mModelCells[x, y] = baseBlock;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     // Helper function to remove each of the Tetrino segments from the model.
@@ -495,7 +444,7 @@ public class GameBoard : MonoBehaviour
             if (baseBlock != null)
             {
                 // Don't remove blocks that belong to the parent from the model
-                if (!checkForParentBlock(tetrino, baseBlock))
+                if (!checkIfBlockBelongsToParent(tetrino, baseBlock))
                 {
                     setModel(null, baseBlock.getX(), baseBlock.getY());
                 }
@@ -504,11 +453,10 @@ public class GameBoard : MonoBehaviour
             {
                 Debug.Log("Invalid model removal for Tetrino: " + tetrino.ToString());
             }
-
         }
     }
 
-    private bool checkForParentBlock(Tetrino childTetrino, BaseBlock baseBlock)
+    private bool checkIfBlockBelongsToParent(Tetrino childTetrino, BaseBlock baseBlock)
     {
         if (childTetrino == null || baseBlock == null)
         {
@@ -627,7 +575,7 @@ public class GameBoard : MonoBehaviour
         // Safety loop to not accidentally go on forever
         for (int i = 0; i < 5; i++)
         {
-            if (!isWithinLeftBounds(tetrino))
+            if (!isWithinPlayAreaBounds(tetrino, Vector3.left))
             {
                 moveTetrino(tetrino, Vector3.right);
             }
@@ -639,7 +587,7 @@ public class GameBoard : MonoBehaviour
 
         for (int i = 0; i < 5; i++)
         {
-            if (!isWithinRightBounds(tetrino))
+            if (!isWithinPlayAreaBounds(tetrino, Vector3.right))
             {
                 moveTetrino(tetrino, Vector3.left);
             }
@@ -654,29 +602,36 @@ public class GameBoard : MonoBehaviour
     {
         List<int> rowDeleteIndexes = new List<int>();
 
+        // No need to check if we are in the middle of deleting rows.
         if (mIsDeletingRows)
         {
             return;
         }
 
+        // Get the row indexes for what we need to delete.
         checkForFullRows(rowDeleteIndexes);
 
+        // If there is nothing to delete, we can just continue the game.
         if (rowDeleteIndexes.Count == 0)
         {
             mGameController.setPaused(false);
             return;
         }
 
+        // We have rows to delete, first update the text as the controller will need this
         updateLinesText(rowDeleteIndexes.Count);
 
+        // Change each of the rows to the animated destroying rows
         foreach (int currentRowIndex in rowDeleteIndexes)
         {
             changeRowToDestroyingRow(currentRowIndex);
         }
 
+        // Wait for the animations to finish and then delete and shift the game board
         StartCoroutine(delayedDeleteAndShiftGameRowDown(rowDeleteIndexes));
     }
 
+    // Count how many rows have full lines
     public void checkForFullRows(List<int> rowDeleteIndexes)
     {
         for (int rowIndex = 0; rowIndex < MAX_Y_SIZE; rowIndex++)
@@ -699,13 +654,16 @@ public class GameBoard : MonoBehaviour
         }
     }
 
+    // Delay until the animated destroying blocks are done, and then delete and shift the game board
     public IEnumerator delayedDeleteAndShiftGameRowDown(List<int> rowDeleteIndexes)
     {
+        // Wait for the animated destroying blocks to finish
         mIsDeletingRows = true;
         float clipLength = mEffectsController.getDestroyingBlockAnimationLength();
 
         yield return new WaitForSeconds(clipLength);
 
+        // Delete each row one by one
         foreach (int currentRowIndex in rowDeleteIndexes)
         {
             deleteRow(currentRowIndex);
@@ -713,11 +671,14 @@ public class GameBoard : MonoBehaviour
 
         int rowShifts = 0;
 
+        // Shift the game board down, but remember that everything moves a row each
+        // time we do this, so we have to offset the rowindex by how many times we have shifted.
         foreach (int currentRowIndex in rowDeleteIndexes)
         {
             shiftGameBordDown(currentRowIndex - rowShifts++);
         }
 
+        // restart the game
         mGameController.setPaused(false);
         mIsDeletingRows = false;
     }

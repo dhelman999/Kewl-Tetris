@@ -41,6 +41,11 @@ public class PauseMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             quitGame();
         }
 
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            continueClicked();
+        }
+
         if (EventSystem.current.currentSelectedGameObject == null)
         {
             if (Input.GetKeyDown(KeyCode.LeftArrow) ||

@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -161,7 +160,7 @@ public class GameController : MonoBehaviour
 
         mPauseMenu.SetActive(false);
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
             mPauseMenu.SetActive(true);
             mGameboardCanvas.SetActive(false);
@@ -525,7 +524,7 @@ public class GameController : MonoBehaviour
 
         int highScore;
 
-        if (Int32.TryParse(mHighScoreTMP.text, out highScore))
+        if (int.TryParse(mHighScoreTMP.text, out highScore))
         {
             PlayerPrefs.SetInt(HIGH_SCORE_PREF_NAME, highScore);
         }
@@ -670,7 +669,7 @@ public class GameController : MonoBehaviour
 
     public void setPaused(bool paused)
     {
-        this.mPaused = paused;
+        mPaused = paused;
     }
 
     void OnDestroy()

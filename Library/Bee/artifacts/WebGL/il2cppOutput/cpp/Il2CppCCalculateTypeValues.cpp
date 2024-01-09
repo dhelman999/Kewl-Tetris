@@ -10008,16 +10008,16 @@ struct LayoutCache_tF844B2FAD6933B78FD5EFEBDE0529BCBAC19BA60  : public RuntimeOb
 	GUILayoutGroup_tD08496E80F283C290B5B90D7BFB3C9C7CC33CD8D* ___windows_3;
 };
 
-// GameBoard/<delayedDeleteAndShiftGameRowDown>d__44
-struct U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB  : public RuntimeObject
+// GameBoard/<delayedDeleteAndShiftGameRowDown>d__41
+struct U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB  : public RuntimeObject
 {
-	// System.Int32 GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::<>1__state
+	// System.Int32 GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::<>2__current
+	// System.Object GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// GameBoard GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::<>4__this
+	// GameBoard GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::<>4__this
 	GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50* ___U3CU3E4__this_2;
-	// System.Collections.Generic.List`1<System.Int32> GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::rowDeleteIndexes
+	// System.Collections.Generic.List`1<System.Int32> GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::rowDeleteIndexes
 	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___rowDeleteIndexes_3;
 };
 
@@ -46494,21 +46494,21 @@ struct GroupBox_t0AD80A2EA4AB0B8E5C5AD37A1CDDEA9572494813  : public BindableElem
 struct I_Block_t16235C4D1D554B71DF521D940F7E97BAC0AB6C7F  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single I_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // J_Block
 struct J_Block_tCD41569A59BC5DC5418D5CE12FE8A7958AD072F1  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single J_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // L_Block
 struct L_Block_tB1614184DF43E474A98ECFDDA4B8E8E4A9B9B7D4  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single L_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // UnityEngine.UI.LayoutElement
@@ -46582,7 +46582,7 @@ struct MouseCaptureOutEvent_t55FDD6FD486DDB02F1878EEF2716F444E7A94AF5  : public 
 struct O_Block_t0E0B5CAAC6DBF0C077FAC0A49ACFE48E39D99861  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single O_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // UnityEngine.UIElements.PanelEventHandler
@@ -46631,7 +46631,7 @@ struct RectMask2D_tACF92BE999C791A665BD1ADEABF5BCEB82846670  : public UIBehaviou
 struct S_Block_t90EE09FE46009D28DDF91B6434C9A736A362811B  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single S_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // UnityEngine.UI.ScrollRect
@@ -46750,7 +46750,7 @@ struct Selectable_t3251808068A17B8E92FB33590A4C2FA66D456712  : public UIBehaviou
 struct T_Block_t3CABA5BBE80EB8FD990EAB37D5EFA68F7CD2B525  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single T_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // UnityEngine.UIElements.TemplateContainer
@@ -46829,7 +46829,7 @@ struct ToggleGroup_tF2E6FE7D4B17BDBF82462715CFB57C4FDE0A2A2C  : public UIBehavio
 struct Z_Block_t6E596F5226AC965F2011F4178074FD721E294908  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single Z_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // UnityEngine.UIElements.TextField/TextInput
@@ -54414,9 +54414,9 @@ struct U3CU3Ec_tCA6A4D073378D45745D0E81D226E721969C3BE80_StaticFields
 
 // UnityEngine.GUILayoutUtility/LayoutCache
 
-// GameBoard/<delayedDeleteAndShiftGameRowDown>d__44
+// GameBoard/<delayedDeleteAndShiftGameRowDown>d__41
 
-// GameBoard/<delayedDeleteAndShiftGameRowDown>d__44
+// GameBoard/<delayedDeleteAndShiftGameRowDown>d__41
 
 // UnityEngine.UIElements.GenericDropdownMenu/MenuItem
 
@@ -66250,12 +66250,14 @@ struct Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields
 	String_t* ___DESTROYING_BLOCK_PATH_14;
 	// UnityEngine.GameObject Tetrino::mDestryoingBlock
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___mDestryoingBlock_15;
+	// System.Single Tetrino::destroyingBlockAnimationLength
+	float ___destroyingBlockAnimationLength_16;
 	// System.Single Tetrino::HIGH_BOUNDS
-	float ___HIGH_BOUNDS_16;
+	float ___HIGH_BOUNDS_17;
 	// System.Single Tetrino::LOW_BOUNDS
-	float ___LOW_BOUNDS_17;
+	float ___LOW_BOUNDS_18;
 	// System.Boolean Tetrino::mIsShadowEnabled
-	bool ___mIsShadowEnabled_18;
+	bool ___mIsShadowEnabled_19;
 };
 
 // Tetrino
@@ -73991,7 +73993,7 @@ const Il2CppTypeDefinitionSizes g_typeDefinitionSize3392 = { sizeof(AudioControl
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3393;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3393 = { sizeof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6), -1, sizeof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3394;
-const Il2CppTypeDefinitionSizes g_typeDefinitionSize3394 = { sizeof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB), -1, 0, 0 };
+const Il2CppTypeDefinitionSizes g_typeDefinitionSize3394 = { sizeof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3395;
 const Il2CppTypeDefinitionSizes g_typeDefinitionSize3395 = { sizeof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50), -1, sizeof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields), 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize3396;

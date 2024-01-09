@@ -1545,16 +1545,16 @@ struct LayoutCache_tF844B2FAD6933B78FD5EFEBDE0529BCBAC19BA60  : public RuntimeOb
 	GUILayoutGroup_tD08496E80F283C290B5B90D7BFB3C9C7CC33CD8D* ___windows_3;
 };
 
-// GameBoard/<delayedDeleteAndShiftGameRowDown>d__44
-struct U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB  : public RuntimeObject
+// GameBoard/<delayedDeleteAndShiftGameRowDown>d__41
+struct U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB  : public RuntimeObject
 {
-	// System.Int32 GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::<>1__state
+	// System.Int32 GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::<>2__current
+	// System.Object GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// GameBoard GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::<>4__this
+	// GameBoard GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::<>4__this
 	GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50* ___U3CU3E4__this_2;
-	// System.Collections.Generic.List`1<System.Int32> GameBoard/<delayedDeleteAndShiftGameRowDown>d__44::rowDeleteIndexes
+	// System.Collections.Generic.List`1<System.Int32> GameBoard/<delayedDeleteAndShiftGameRowDown>d__41::rowDeleteIndexes
 	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___rowDeleteIndexes_3;
 };
 
@@ -8688,49 +8688,49 @@ struct BaseRaycaster_t7DC8158FD3CA0193455344379DD5FF7CD5F1F832  : public UIBehav
 struct I_Block_t16235C4D1D554B71DF521D940F7E97BAC0AB6C7F  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single I_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // J_Block
 struct J_Block_tCD41569A59BC5DC5418D5CE12FE8A7958AD072F1  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single J_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // L_Block
 struct L_Block_tB1614184DF43E474A98ECFDDA4B8E8E4A9B9B7D4  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single L_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // O_Block
 struct O_Block_t0E0B5CAAC6DBF0C077FAC0A49ACFE48E39D99861  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single O_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // S_Block
 struct S_Block_t90EE09FE46009D28DDF91B6434C9A736A362811B  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single S_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // T_Block
 struct T_Block_t3CABA5BBE80EB8FD990EAB37D5EFA68F7CD2B525  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single T_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // Z_Block
 struct Z_Block_t6E596F5226AC965F2011F4178074FD721E294908  : public Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973
 {
 	// System.Single Z_Block::X_OFFSET
-	float ___X_OFFSET_19;
+	float ___X_OFFSET_20;
 };
 
 // UnityEngine.EventSystems.PhysicsRaycaster
@@ -10063,9 +10063,9 @@ struct U3CU3Ec_tCA6A4D073378D45745D0E81D226E721969C3BE80_StaticFields
 
 // UnityEngine.GUILayoutUtility/LayoutCache
 
-// GameBoard/<delayedDeleteAndShiftGameRowDown>d__44
+// GameBoard/<delayedDeleteAndShiftGameRowDown>d__41
 
-// GameBoard/<delayedDeleteAndShiftGameRowDown>d__44
+// GameBoard/<delayedDeleteAndShiftGameRowDown>d__41
 
 // System.Text.RegularExpressions.GroupCollection/Enumerator
 
@@ -11935,12 +11935,14 @@ struct Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields
 	String_t* ___DESTROYING_BLOCK_PATH_14;
 	// UnityEngine.GameObject Tetrino::mDestryoingBlock
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___mDestryoingBlock_15;
+	// System.Single Tetrino::destroyingBlockAnimationLength
+	float ___destroyingBlockAnimationLength_16;
 	// System.Single Tetrino::HIGH_BOUNDS
-	float ___HIGH_BOUNDS_16;
+	float ___HIGH_BOUNDS_17;
 	// System.Single Tetrino::LOW_BOUNDS
-	float ___LOW_BOUNDS_17;
+	float ___LOW_BOUNDS_18;
 	// System.Boolean Tetrino::mIsShadowEnabled
-	bool ___mIsShadowEnabled_18;
+	bool ___mIsShadowEnabled_19;
 };
 
 // Tetrino
@@ -12917,7 +12919,7 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3393[32] =
 	static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mGameController_4)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mPostProcessVolume_5)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mAudioController_6)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mGameBoardTransform_7)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mToggleShadowButton_8)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mUIOverlayText_9)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6_StaticFields, ___DESTROYING_BLOCK_PATH_10)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6_StaticFields, ___mDestryoingBlock_11)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___ENTRANCE_EFFECTS_PLAY_TIME_12)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___ENTRANCE_EFFECTS_BLOOM_INTENSITY_13)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___LEVEL_UP_PULSE_MULTIPLIER_14)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___LEVEL_UP_BLOOM_INTENSITY_15)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___INSTRUCTIONS_FADE_TIME_16)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___GAME_OVER_FADE_TIME_17)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___LEVEL_UP_PLAY_TIME_18)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___SHAKE_DURATION_19)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mRunningShakeDuration_20)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___SHAKE_MAGNITUDE_21)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___SHAKE_DAMPING_SPEED_22)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mShakeInitialPosition_23)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mBloom_24)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mGrain_25)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mColorGrading_26)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6_StaticFields, ___MIN_HUE_SHIFT_27)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mLevelUpPlayTimeRemaining_28)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mPlayLevelUpEffects_29)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mEntranceEffectsTimeRemaining_30)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mInstructionsTimeRemaining_31)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mInstructionsProcessed_32)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___UI_OVERLAY_TEXT_GAME_OVER_33)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mGameOverProcessed_34)),static_cast<int32_t>(offsetof(EffectsController_t368B652FD6BE8473EE0614774B68F877DB2770D6, ___mGameOverTimeTimeRemaining_35)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3394[4] = 
 {
-	static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__44_t1A9AEF9B409050FFF5E543DB9526C93890DF8CEB, ___rowDeleteIndexes_3)),};
+	static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CdelayedDeleteAndShiftGameRowDownU3Ed__41_t9157BE009EBF579DB6CCDBBC3522B8EB0189BBEB, ___rowDeleteIndexes_3)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3395[19] = 
 {
 	static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields, ___MAX_X_SIZE_4)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields, ___MAX_Y_SIZE_5)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields, ___GAME_BOARD_NAME_6)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mPlayArea_7)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mTetrinoFactory_8)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mGameController_9)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mLinesTMP_10)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mEffectsController_11)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mModelCells_12)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields, ___LINES_TEXT_HEADER_13)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields, ___STARTING_X_14)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50_StaticFields, ___STARTING_Y_15)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mLeftMostBounds_16)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mRightMostBounds_17)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mBottomMostBounds_18)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mTopMostBounds_19)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mLineAmount_20)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mLinesRecentlyShifted_21)),static_cast<int32_t>(offsetof(GameBoard_t370601B77A85939A5BC477E91E60FF9C0108BA50, ___mIsDeletingRows_22)),};
@@ -12938,31 +12940,31 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3400[4] =
 	static_cast<int32_t>(offsetof(BaseBlock_tDA12E8F9836281BBAF2FF69F25C35F43FA4BD742_StaticFields, ___BLOCK_SIZE_4)),static_cast<int32_t>(offsetof(BaseBlock_tDA12E8F9836281BBAF2FF69F25C35F43FA4BD742, ___mXPos_5)),static_cast<int32_t>(offsetof(BaseBlock_tDA12E8F9836281BBAF2FF69F25C35F43FA4BD742, ___mYPos_6)),static_cast<int32_t>(offsetof(BaseBlock_tDA12E8F9836281BBAF2FF69F25C35F43FA4BD742, ___mDestroyingBlock_7)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3401[1] = 
 {
-	static_cast<int32_t>(offsetof(I_Block_t16235C4D1D554B71DF521D940F7E97BAC0AB6C7F, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(I_Block_t16235C4D1D554B71DF521D940F7E97BAC0AB6C7F, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3402[1] = 
 {
-	static_cast<int32_t>(offsetof(J_Block_tCD41569A59BC5DC5418D5CE12FE8A7958AD072F1, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(J_Block_tCD41569A59BC5DC5418D5CE12FE8A7958AD072F1, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3403[1] = 
 {
-	static_cast<int32_t>(offsetof(L_Block_tB1614184DF43E474A98ECFDDA4B8E8E4A9B9B7D4, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(L_Block_tB1614184DF43E474A98ECFDDA4B8E8E4A9B9B7D4, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3404[1] = 
 {
-	static_cast<int32_t>(offsetof(O_Block_t0E0B5CAAC6DBF0C077FAC0A49ACFE48E39D99861, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(O_Block_t0E0B5CAAC6DBF0C077FAC0A49ACFE48E39D99861, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3405[1] = 
 {
-	static_cast<int32_t>(offsetof(S_Block_t90EE09FE46009D28DDF91B6434C9A736A362811B, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(S_Block_t90EE09FE46009D28DDF91B6434C9A736A362811B, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3406[9] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,0,0,0,0,0,0,};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3407[15] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3407[16] = 
 {
-	static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mParent_4)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mShadow_5)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mSegments_6)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mIsShadowClone_7)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mGameBoardModel_8)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mBaseSegment_9)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mTetrinoFactory_10)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___SHADOW_BLOCK_PATH_11)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mShadowBlock_12)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mShadowBlockSR_13)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___DESTROYING_BLOCK_PATH_14)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___mDestryoingBlock_15)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___HIGH_BOUNDS_16)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___LOW_BOUNDS_17)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___mIsShadowEnabled_18)),};
+	static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mParent_4)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mShadow_5)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mSegments_6)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mIsShadowClone_7)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mGameBoardModel_8)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mBaseSegment_9)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mTetrinoFactory_10)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___SHADOW_BLOCK_PATH_11)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mShadowBlock_12)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973, ___mShadowBlockSR_13)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___DESTROYING_BLOCK_PATH_14)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___mDestryoingBlock_15)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___destroyingBlockAnimationLength_16)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___HIGH_BOUNDS_17)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___LOW_BOUNDS_18)),static_cast<int32_t>(offsetof(Tetrino_t05D65081AE58FE77FF3F118F480F51F825EA6973_StaticFields, ___mIsShadowEnabled_19)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3408[1] = 
 {
-	static_cast<int32_t>(offsetof(T_Block_t3CABA5BBE80EB8FD990EAB37D5EFA68F7CD2B525, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(T_Block_t3CABA5BBE80EB8FD990EAB37D5EFA68F7CD2B525, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3409[1] = 
 {
-	static_cast<int32_t>(offsetof(Z_Block_t6E596F5226AC965F2011F4178074FD721E294908, ___X_OFFSET_19)),};
+	static_cast<int32_t>(offsetof(Z_Block_t6E596F5226AC965F2011F4178074FD721E294908, ___X_OFFSET_20)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable3410[3] = 
 {
 	static_cast<int32_t>(sizeof(RuntimeObject)),0,0,};
